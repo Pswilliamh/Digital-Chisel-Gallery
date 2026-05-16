@@ -7,11 +7,11 @@ import { Download, X, Smartphone, Monitor, Sparkles } from "lucide-react";
 import type { GalleryImage, WisdomQuote } from "@/lib/gallery";
 import { downloadImage } from "@/lib/gallery";
 
-interface SoundscapeGalleryProps {
+interface DigitalChiselGalleryProps {
   quotes: WisdomQuote[];
 }
 
-// Import image arrays directly
+// All 48 horizontal images - no duplicates
 const horizontalImages: GalleryImage[] = [
   { id: "h1", src: "/images/gallery/horizontal/Christ_In_Creation.png", alt: "Indonesian wood-relief print", orientation: "horizontal" },
   { id: "h2", src: "/images/gallery/horizontal/DCG-Becak-Bike.png", alt: "Indonesian wood-relief print", orientation: "horizontal" },
@@ -63,6 +63,7 @@ const horizontalImages: GalleryImage[] = [
   { id: "h48", src: "/images/gallery/horizontal/f9702b1f-8ba3-4062-960c-d71529891842.png", alt: "Indonesian wood-relief print", orientation: "horizontal" },
 ];
 
+// All 23 vertical images - no duplicates
 const verticalImages: GalleryImage[] = [
   { id: "v1", src: "/images/gallery/vertical/DCG-Bicycle_Becek.png", alt: "Indonesian wood-relief print", orientation: "vertical" },
   { id: "v2", src: "/images/gallery/vertical/DCG-Bicycle_Vender.png", alt: "Indonesian wood-relief print", orientation: "vertical" },
@@ -89,7 +90,7 @@ const verticalImages: GalleryImage[] = [
   { id: "v23", src: "/images/gallery/vertical/upscale-DCG-Christ.png", alt: "Indonesian wood-relief print", orientation: "vertical" },
 ];
 
-export function SoundscapeGallery({ quotes }: SoundscapeGalleryProps) {
+export function DigitalChiselGallery({ quotes }: DigitalChiselGalleryProps) {
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
   const [selectedQuote] = useState<WisdomQuote>(quotes[Math.floor(Math.random() * quotes.length)]);
   const [liveWallpaperImages, setLiveWallpaperImages] = useState<GalleryImage[]>([]);
@@ -102,7 +103,7 @@ export function SoundscapeGallery({ quotes }: SoundscapeGalleryProps) {
         const text = await response.text();
         
         // Simple detection: look for .png, .jpg, .gif in directory listing
-        const imageRegex = /([\w-]+\.(png|jpg|jpeg|gif))/gi;
+        const imageRegex = /([\w-]+\.(png|jpg|jpeg|gif|mp4))/gi;
         const matches = text.match(imageRegex);
         
         if (matches) {
@@ -138,6 +139,7 @@ export function SoundscapeGallery({ quotes }: SoundscapeGalleryProps) {
           <div className="flex items-center gap-3 mb-8">
             <Smartphone className="w-6 h-6 text-muted-foreground" />
             <h2 className="font-serif text-3xl md:text-4xl text-foreground">For Phones & Android</h2>
+            <Badge variant="outline">{verticalImages.length} Images</Badge>
           </div>
           <div className="columns-1 md:columns-2 lg:columns-3 gap-2 space-y-2">
             {verticalImages.map((image) => (
@@ -166,6 +168,7 @@ export function SoundscapeGallery({ quotes }: SoundscapeGalleryProps) {
           <div className="flex items-center gap-3 mb-8">
             <Monitor className="w-6 h-6 text-muted-foreground" />
             <h2 className="font-serif text-3xl md:text-4xl text-foreground">For Tablets & Desktop</h2>
+            <Badge variant="outline">{horizontalImages.length} Images</Badge>
           </div>
           <div className="columns-1 md:columns-2 lg:columns-3 gap-2 space-y-2">
             {horizontalImages.map((image) => (
@@ -205,13 +208,24 @@ export function SoundscapeGallery({ quotes }: SoundscapeGalleryProps) {
                   onClick={() => setSelectedImage(image)}
                 >
                   <div className="relative ken-burns-fast hover:scale-105 transition-transform duration-700">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={800}
-                      height={600}
-                      className="w-full h-auto object-cover"
-                    />
+                    {image.src.endsWith('.mp4') ? (
+                      <video
+                        src={image.src}
+                        className="w-full h-auto object-cover"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                      />
+                    ) : (
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        width={800}
+                        height={600}
+                        className="w-full h-auto object-cover"
+                      />
+                    )}
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
                     <Badge className="absolute top-3 right-3 bg-primary/90 backdrop-blur-sm">
                       <Sparkles className="w-3 h-3 mr-1" />
@@ -240,12 +254,23 @@ export function SoundscapeGallery({ quotes }: SoundscapeGalleryProps) {
             {selectedImage && (
               <>
                 <div className="relative w-full h-full ken-burns">
-                  <Image
-                    src={selectedImage.src}
-                    alt={selectedImage.alt}
-                    fill
-                    className="object-contain"
-                  />
+                  {selectedImage.src.endsWith('.mp4') ? (
+                    <video
+                      src={selectedImage.src}
+                      className="w-full h-full object-contain"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                    />
+                  ) : (
+                    <Image
+                      src={selectedImage.src}
+                      alt={selectedImage.alt}
+                      fill
+                      className="object-contain"
+                    />
+                  )}
                 </div>
 
                 <div className="absolute bottom-0 left-0 right-0">
