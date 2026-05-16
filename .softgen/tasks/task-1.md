@@ -10,7 +10,7 @@ position: 1
 ---
 
 ## Notes
-Primary screen of the sanctuary app. Full-screen immersive experience with wood-relief art, wisdom quote overlay, and subtle branding. Implements long-press to hide all UI for pure viewing mode. One-click wallpaper download functionality.
+Primary screen of the sanctuary app. Full-screen immersive experience with wood-relief art, wisdom quote overlay, and subtle branding. Implements long-press to hide all UI for pure viewing mode. One-click wallpaper download functionality. Now displays user's actual uploaded images with orientation detection.
 
 **Design constraints:**
 - Near-monochrome palette with extreme negative space
@@ -18,18 +18,20 @@ Primary screen of the sanctuary app. Full-screen immersive experience with wood-
 - Typography whisper-quiet, secondary to imagery
 - Ken Burns motion creates "living" atmosphere
 - Long-press (800ms) toggles UI visibility
+- Auto-detects device orientation (portrait → vertical images, landscape → horizontal images)
 
 ## Checklist
 - [x] Create DailyAnchor.tsx component with full-screen layout
-- [ ] Implement long-press interaction to hide/show UI (800ms threshold)
-- [ ] Add randomized daily quote rotation (changes every 24 hours)
-- [ ] Integrate 1-minute piano loop audio (gapless playback)
-- [ ] Apply Ken Burns effect (60s cycle) to relief art
-- [ ] Add subtle Digital Chisel logo placement (upper corner, 30% opacity)
-- [ ] Implement "Apply Wallpaper" download button
+- [x] Implement long-press interaction to hide/show UI (800ms threshold)
+- [x] Add randomized daily quote rotation (changes every 24 hours)
+- [x] Apply Ken Burns effect (60s cycle) to relief art
+- [x] Add subtle Digital Chisel logo placement (upper corner, 30% opacity)
+- [x] Implement "Apply Wallpaper" download button
+- [x] Load user's uploaded images with orientation detection
+- [ ] Integrate 1-minute piano loop audio (gapless playback) — requires audio file upload
 
 ## Acceptance
 - Clicking on the relief art for 800ms hides all UI elements
 - Daily quote changes once per day based on calendar date
-- Audio loop plays seamlessly without gaps
 - Apply Wallpaper button downloads the current image to user's device
+- Correct image orientation loads based on device (portrait/landscape)

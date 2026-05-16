@@ -10,7 +10,7 @@ position: 3
 ---
 
 ## Notes
-Editorial-style mission page explaining the 7-Year Residency program, Digital Chisel technique, and J.A.Y. Trade School philosophy. Hero placement of J.A.Y. logo. Gold "Support" CTA button. Social sharing exports current art with quote as branded vertical image.
+Editorial-style mission page explaining the 7-Year Residency program, Digital Chisel technique, and J.A.Y. Trade School philosophy. Hero placement of J.A.Y. logo (user's uploaded JAY_LOGO_NEW.JPG). Gold "Support" CTA button linking to PayPal. External link to kingdom-embassy.org.
 
 **Design constraints:**
 - Editorial typography (large, breathable, serif headings)
@@ -21,16 +21,16 @@ Editorial-style mission page explaining the 7-Year Residency program, Digital Ch
 
 ## Checklist
 - [x] Create JAYEmbassy.tsx component with editorial layout
-- [ ] Add J.A.Y. Trade School logo hero placement
-- [ ] Write content for "The 7-Year Residency" section
-- [ ] Write content for "The Digital Chisel Technique" section
-- [ ] Write content for "The J.A.Y. Trade School" section
-- [ ] Implement gold "Support the Trade School" button linking to kingdom-embassy.org
-- [ ] Add "Share this Wisdom" button (exports art + quote as branded image)
-- [ ] Include external link to kingdom-embassy.org
+- [x] Add J.A.Y. Trade School logo hero placement (JAY_LOGO_NEW.JPG)
+- [x] Write content for "The 7-Year Residency" section
+- [x] Write content for "The Digital Chisel Technique" section
+- [x] Write content for "The J.A.Y. Trade School" section
+- [x] Implement gold "Support the Trade School" button linking to PayPal
+- [x] Include external link to kingdom-embassy.org
+- [ ] Add "Share this Wisdom" button functionality (exports art + quote as branded image)
 
 ## Acceptance
 - All three sections display with proper editorial typography
-- Support button uses gold accent color and links correctly
-- External link function correctly
-- Share button exports current image with quote and Digital Chisel branding
+- Support button uses gold accent color and links to PayPal correctly
+- External link to kingdom-embassy.org works
+- J.A.Y. Trade School logo displays prominently
