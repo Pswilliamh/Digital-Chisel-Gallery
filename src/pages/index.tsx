@@ -40,6 +40,7 @@ export default function Home() {
         title="Digital Chisel Gallery — Asian Culture Prints"
         description="A premium digital sanctuary for Indonesian wood-relief prints. Daily wisdom quotes, ambient soundscapes, and contemplative art curated by Digital Chisel Gallery in partnership with J.A.Y. Trade School."
         image="/og-image.png"
+        keywords="Digital Chisel, Indonesian Art, Wood Relief, J.A.Y. Trade School, Meditation Wallpaper, Structural Truth, Asian Art, Contemplative Art, Cultural Heritage, Daily Wisdom, Ambient Art"
       />
 
       <Tabs defaultValue="anchor" className="w-full">

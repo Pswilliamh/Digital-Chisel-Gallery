@@ -1,24 +1,60 @@
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Share2, ShoppingBag } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { ExternalLink, Share2, ShoppingBag, Send } from "lucide-react";
 
 export function JAYEmbassy() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleShare = () => {
     alert("Social sharing feature — exports current art + wisdom quote as branded vertical image");
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    setTimeout(() => {
+      alert(`Thank you, ${formData.name}! Your message has been received. We'll respond to ${formData.email} soon.`);
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      setIsSubmitting(false);
+    }, 1000);
   };
 
   return (
     <div className="min-h-screen bg-background py-16">
       <div className="editorial-container">
         <div className="text-center mb-20">
-          <Image
-            src="/JAY_LOGO_NEW.JPG"
-            alt="J.A.Y. Trade School"
-            width={300}
-            height={300}
-            className="mx-auto mb-8 rounded-lg"
-          />
+          <Link
+            href="https://drive.google.com/file/d/1bFU3jgD2SyzLkq7TujpgHTKWfxbOPsRI/view?usp=drive_link"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block group"
+          >
+            <Image
+              src="/JAY_LOGO_NEW.JPG"
+              alt="J.A.Y. Trade School — Click to watch our mission video"
+              width={300}
+              height={300}
+              className="mx-auto mb-8 rounded-lg transition-transform group-hover:scale-105"
+            />
+            <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors flex items-center justify-center gap-2">
+              Click logo to watch our 1-minute mission video
+              <ExternalLink className="w-4 h-4" />
+            </p>
+          </Link>
         </div>
 
         <section className="mb-32">
@@ -33,6 +69,85 @@ export function JAYEmbassy() {
             <p>
               At the Junior Architect Group Yayasan (J.A.Y.), our students learn to appreciate this depth. We help them see the structural truth in these artifacts, guiding them to move from a mindset of survival to a mindset of creation. Through your support, we help them become more than they ever imagined they could be.
             </p>
+          </div>
+        </section>
+
+        <section className="mb-32">
+          <h2 className="editorial-heading text-3xl mb-12">Connect with the Digital Chisel Embassy</h2>
+          <div className="max-w-2xl mx-auto bg-card/30 backdrop-blur-sm rounded-lg p-8 border border-muted/20">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="space-y-2">
+                <Label htmlFor="name" className="text-foreground font-sans">Name</Label>
+                <Input
+                  id="name"
+                  type="text"
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="bg-background/50 border-muted focus:border-foreground transition-colors"
+                  placeholder="Your full name"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="email" className="text-foreground font-sans">Email</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  required
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="bg-background/50 border-muted focus:border-foreground transition-colors"
+                  placeholder="your@email.com"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="subject" className="text-foreground font-sans">Subject</Label>
+                <Select
+                  value={formData.subject}
+                  onValueChange={(value) => setFormData({ ...formData, subject: value })}
+                  required
+                >
+                  <SelectTrigger className="bg-background/50 border-muted focus:border-foreground transition-colors">
+                    <SelectValue placeholder="Select a topic" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="mission">Mission Inquiry</SelectItem>
+                    <SelectItem value="support">Artifact Support</SelectItem>
+                    <SelectItem value="technical">Technical</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="message" className="text-foreground font-sans">Message</Label>
+                <Textarea
+                  id="message"
+                  required
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  className="bg-background/50 border-muted focus:border-foreground transition-colors min-h-[150px] resize-none"
+                  placeholder="Share your thoughts with us..."
+                />
+              </div>
+
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-[#D4AF37] text-black hover:bg-[#D4AF37]/90 text-lg py-6"
+                size="lg"
+              >
+                {isSubmitting ? (
+                  "Sending..."
+                ) : (
+                  <>
+                    <Send className="w-5 h-5 mr-2" />
+                    Send Message
+                  </>
+                )}
+              </Button>
+            </form>
           </div>
         </section>
 
