@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { SEO } from "@/components/SEO";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { DailyAnchor } from "@/components/DailyAnchor";
-import { SoundscapeGallery } from "@/components/SoundscapeGallery";
+import { DigitalChiselGallery } from "@/components/SoundscapeGallery";
 import { JAYEmbassy } from "@/components/JAYEmbassy";
 import type { WisdomQuote } from "@/lib/gallery";
 
@@ -71,7 +71,7 @@ export default function Home() {
         </TabsContent>
 
         <TabsContent value="gallery" className="mt-14 focus-visible:outline-none focus-visible:ring-0">
-          <SoundscapeGallery quotes={quotes} />
+          <DigitalChiselGallery quotes={quotes} />
         </TabsContent>
 
         <TabsContent value="embassy" className="mt-14 focus-visible:outline-none focus-visible:ring-0">
