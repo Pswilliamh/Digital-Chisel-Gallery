@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import type { WisdomQuote, GalleryImage } from "@/lib/gallery";
-import { getDailyQuote, downloadImage, getRandomImage } from "@/lib/gallery";
+import { getDailyQuote, downloadImage, getRandomImage, getGalleryImages } from "@/lib/gallery";
 
 interface DailyAnchorProps {
   quotes: WisdomQuote[];
@@ -17,7 +17,10 @@ export function DailyAnchor({ quotes }: DailyAnchorProps) {
 
   useEffect(() => {
     setDailyQuote(getDailyQuote(quotes));
-    setDailyImage(getRandomImage());
+    const images = getGalleryImages();
+    const dayOfYear = Math.floor((new Date().getTime() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000);
+    const imageIndex = dayOfYear % images.length;
+    setDailyImage(images[imageIndex]);
   }, [quotes]);
 
   const handleLongPressStart = () => {

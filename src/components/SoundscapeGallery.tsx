@@ -1,18 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Download, X } from "lucide-react";
 import type { GalleryImage, WisdomQuote } from "@/lib/gallery";
-import { galleryImages, downloadImage } from "@/lib/gallery";
+import { getGalleryImages, downloadImage } from "@/lib/gallery";
 
 interface SoundscapeGalleryProps {
   quotes: WisdomQuote[];
 }
 
 export function SoundscapeGallery({ quotes }: SoundscapeGalleryProps) {
+  const [galleryImages, setGalleryImages] = useState<GalleryImage[]>([]);
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
   const [selectedQuote] = useState<WisdomQuote>(quotes[Math.floor(Math.random() * quotes.length)]);
+
+  useEffect(() => {
+    setGalleryImages(getGalleryImages());
+  }, []);
 
   const handleDownload = () => {
     if (selectedImage) {
@@ -37,7 +42,6 @@ export function SoundscapeGallery({ quotes }: SoundscapeGalleryProps) {
                   width={800}
                   height={600}
                   className="w-full h-auto object-cover"
-                  style={{ aspectRatio: image.aspectRatio }}
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               </div>

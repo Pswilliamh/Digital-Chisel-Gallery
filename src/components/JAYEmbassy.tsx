@@ -13,11 +13,11 @@ export function JAYEmbassy() {
       <div className="editorial-container">
         <div className="text-center mb-20">
           <Image
-            src="/images/logos/jay-logo.png"
+            src="/JAY_LOGO_NEW.JPG"
             alt="J.A.Y. Trade School"
-            width={200}
-            height={200}
-            className="mx-auto mb-8"
+            width={300}
+            height={300}
+            className="mx-auto mb-8 rounded-lg"
           />
         </div>
 
@@ -98,7 +98,7 @@ export function JAYEmbassy() {
             className="bg-[#D4AF37] text-black hover:bg-[#D4AF37]/90 text-lg px-8 py-6"
             size="lg"
           >
-            <Link href="https://kingdom-embassy.org" target="_blank" rel="noopener noreferrer">
+            <Link href="https://www.paypal.com/ncp/payment/54E6N3SEK5EXQ" target="_blank" rel="noopener noreferrer">
               Support the Trade School
               <ExternalLink className="w-5 h-5 ml-2" />
             </Link>
