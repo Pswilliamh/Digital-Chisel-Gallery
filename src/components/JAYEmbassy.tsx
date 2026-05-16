@@ -22,72 +22,16 @@ export function JAYEmbassy() {
         </div>
 
         <section className="mb-32">
-          <h1 className="editorial-heading">The 7-Year Residency</h1>
+          <h1 className="editorial-heading">Seven Years of Structural Truth</h1>
           <div className="editorial-body space-y-6">
             <p>
-              In the shadow of ancient temples, where wood and stone remember centuries of devotion, 
-              the Digital Chisel Gallery operates a singular apprenticeship program. Seven years. 
-              Not a timeline chosen arbitrarily, but one that mirrors the traditional craft training 
-              of Kyoto's master artisans.
+              Seven years. This was not a timeline chosen arbitrarily, but one that mirrors the traditional depth of mastery. Ambassador William spent these seven years serving in local Indonesian communities, understanding the grassroots realities of life on a daily basis in cities, villages, and rural settlements.
             </p>
             <p>
-              Each resident commits to this duration not as a constraint, but as a liberation from 
-              the tyranny of quick mastery. The first year is spent in observation. The second in 
-              imitation. By the third, the hands begin to remember what the mind cannot articulate. 
-              Years four through six refine what is remembered. The seventh year is where the 
-              technique becomes indistinguishable from the self.
+              These Digital Chisel Artifacts represent the passion of life captured through those years of service. They are more than digital images; they are anchors of heritage and endurance.
             </p>
             <p>
-              This is not romantic nostalgia. It is structural necessity. The relief prints you 
-              encounter in this sanctuary are not decoration — they are evidence of sustained 
-              attention, of minds trained to see what haste blinds us to.
-            </p>
-          </div>
-        </section>
-
-        <section className="mb-32">
-          <h2 className="editorial-heading">The Digital Chisel Technique</h2>
-          <div className="editorial-body space-y-6">
-            <p>
-              Traditional Indonesian woodblock printing demands physical strength and spatial 
-              intuition. The chisel must know wood grain the way water knows stone — not through 
-              force, but through patient conversation. Our technique transposes this physical 
-              literacy into the digital realm without diluting its rigor.
-            </p>
-            <p>
-              We do not scan. We do not trace. We reconstruct. Every line you see in these prints 
-              began as a study in pressure, in the angle at which light reveals texture, in the 
-              subtle variations that separate craft from automation. The digital chisel is not a 
-              shortcut — it is a translation that honors the original while speaking in contemporary 
-              grammar.
-            </p>
-            <p>
-              The result is relief work that retains the breathing quality of hand-carved 
-              blocks while existing in a medium that can reach contemplatives worldwide. Each print 
-              carries forward the paradox at the heart of all meaningful technique: constraint as 
-              the condition of expression.
-            </p>
-          </div>
-        </section>
-
-        <section className="mb-20">
-          <h2 className="editorial-heading">The J.A.Y. Trade School</h2>
-          <div className="editorial-body space-y-6">
-            <p>
-              J.A.Y. Trade School exists to preserve what industrial education systems routinely 
-              discard: the understanding that mastery cannot be rushed, that certain forms of 
-              knowledge require time measured in seasons rather than semesters.
-            </p>
-            <p>
-              We train not to produce workers, but to cultivate practitioners who understand their 
-              craft as a mode of being, not merely a mode of production. The school operates on 
-              principles borrowed from guild apprenticeships, monastic study, and studio practice — 
-              contexts where learning is inseparable from transformation.
-            </p>
-            <p>
-              Our curriculum is simple: show up. Pay attention. Repeat. Allow failure to instruct. 
-              Trust that seven years of this will yield more than seven months of optimization ever 
-              could. The gallery you are experiencing is one expression of what this yields.
+              At the Junior Architect Group Yayasan (J.A.Y.), our students learn to appreciate this depth. We help them see the structural truth in these artifacts, guiding them to move from a mindset of survival to a mindset of creation. Through your support, we help them become more than they ever imagined they could be.
             </p>
           </div>
         </section>
