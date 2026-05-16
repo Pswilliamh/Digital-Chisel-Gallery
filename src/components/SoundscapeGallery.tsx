@@ -112,7 +112,7 @@ export function SoundscapeGallery({ quotes }: SoundscapeGalleryProps) {
               id: `lw${index + 1}`,
               src: `/images/gallery/live-wallpaper/${filename}`,
               alt: "Animated Digital Chisel wood-relief print",
-              orientation: "live" as const
+              orientation: "horizontal" as const
             }));
           setLiveWallpaperImages(images);
         }
