@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Share2 } from "lucide-react";
+import { ExternalLink, Share2, ShoppingBag } from "lucide-react";
 
 export function JAYEmbassy() {
   const handleShare = () => {
@@ -33,6 +33,29 @@ export function JAYEmbassy() {
             <p>
               At the Junior Architect Group Yayasan (J.A.Y.), our students learn to appreciate this depth. We help them see the structural truth in these artifacts, guiding them to move from a mindset of survival to a mindset of creation. Through your support, we help them become more than they ever imagined they could be.
             </p>
+          </div>
+        </section>
+
+        <section className="mb-16">
+          <div className="bg-card/50 backdrop-blur-sm rounded-lg p-8 border border-muted/20">
+            <div className="text-center space-y-4">
+              <ShoppingBag className="w-12 h-12 mx-auto text-muted-foreground" />
+              <h3 className="font-serif text-2xl text-foreground">Order Physical Prints</h3>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Interested in owning a physical Digital Chisel print? Browse our collection of museum-quality Indonesian wood-relief prints available for order.
+              </p>
+              <Button
+                asChild
+                variant="outline"
+                className="text-lg px-8 py-6"
+                size="lg"
+              >
+                <Link href="https://www.etsy.com/shop/AsianCulturePrints?ref=dashboard-header" target="_blank" rel="noopener noreferrer">
+                  Visit Our Etsy Store
+                  <ExternalLink className="w-5 h-5 ml-2" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </section>
 

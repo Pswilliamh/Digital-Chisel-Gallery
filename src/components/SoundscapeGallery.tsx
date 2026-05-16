@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Download, X, Smartphone, Monitor } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Download, X, Smartphone, Monitor, Sparkles } from "lucide-react";
 import type { GalleryImage, WisdomQuote } from "@/lib/gallery";
 import { downloadImage } from "@/lib/gallery";
 
@@ -91,6 +92,37 @@ const verticalImages: GalleryImage[] = [
 export function SoundscapeGallery({ quotes }: SoundscapeGalleryProps) {
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
   const [selectedQuote] = useState<WisdomQuote>(quotes[Math.floor(Math.random() * quotes.length)]);
+  const [liveWallpaperImages, setLiveWallpaperImages] = useState<GalleryImage[]>([]);
+
+  useEffect(() => {
+    // Dynamically detect live wallpaper images
+    const detectLiveWallpapers = async () => {
+      try {
+        const response = await fetch('/images/gallery/live-wallpaper/');
+        const text = await response.text();
+        
+        // Simple detection: look for .png, .jpg, .gif in directory listing
+        const imageRegex = /([\w-]+\.(png|jpg|jpeg|gif))/gi;
+        const matches = text.match(imageRegex);
+        
+        if (matches) {
+          const images = matches
+            .filter(match => !match.includes('.gitkeep'))
+            .map((filename, index) => ({
+              id: `lw${index + 1}`,
+              src: `/images/gallery/live-wallpaper/${filename}`,
+              alt: "Animated Digital Chisel wood-relief print",
+              orientation: "live" as const
+            }));
+          setLiveWallpaperImages(images);
+        }
+      } catch (error) {
+        console.log('Live wallpaper detection: folder empty or inaccessible');
+      }
+    };
+
+    detectLiveWallpapers();
+  }, []);
 
   const handleDownload = () => {
     if (selectedImage) {
@@ -156,6 +188,41 @@ export function SoundscapeGallery({ quotes }: SoundscapeGalleryProps) {
             ))}
           </div>
         </section>
+
+        {/* Live Wallpaper Section - Animated */}
+        {liveWallpaperImages.length > 0 && (
+          <section>
+            <div className="flex items-center gap-3 mb-8">
+              <Sparkles className="w-6 h-6 text-muted-foreground" />
+              <h2 className="font-serif text-3xl md:text-4xl text-foreground">Live Wallpapers</h2>
+              <Badge variant="secondary" className="ml-2">Animated</Badge>
+            </div>
+            <div className="columns-1 md:columns-2 lg:columns-3 gap-2 space-y-2">
+              {liveWallpaperImages.map((image) => (
+                <div
+                  key={image.id}
+                  className="break-inside-avoid cursor-pointer group relative overflow-hidden"
+                  onClick={() => setSelectedImage(image)}
+                >
+                  <div className="relative ken-burns-fast hover:scale-105 transition-transform duration-700">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={800}
+                      height={600}
+                      className="w-full h-auto object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+                    <Badge className="absolute top-3 right-3 bg-primary/90 backdrop-blur-sm">
+                      <Sparkles className="w-3 h-3 mr-1" />
+                      Animated
+                    </Badge>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
       </div>
 
       <Dialog open={selectedImage !== null} onOpenChange={(open) => !open && setSelectedImage(null)}>
