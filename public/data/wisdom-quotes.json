@@ -1,0 +1,122 @@
+[
+  {
+    "text": "Simplicity is the ultimate sophistication.",
+    "author": "Leonardo da Vinci",
+    "category": "craft"
+  },
+  {
+    "text": "The details are not the details. They make the design.",
+    "author": "Charles Eames",
+    "category": "design"
+  },
+  {
+    "text": "Wabi-sabi is the beauty of things imperfect, impermanent, and incomplete.",
+    "author": "Leonard Koren",
+    "category": "philosophy"
+  },
+  {
+    "text": "Less, but better.",
+    "author": "Dieter Rams",
+    "category": "design"
+  },
+  {
+    "text": "The quieter you become, the more you can hear.",
+    "author": "Ram Dass",
+    "category": "contemplation"
+  },
+  {
+    "text": "In the beginner's mind there are many possibilities, in the expert's mind there are few.",
+    "author": "Shunryu Suzuki",
+    "category": "philosophy"
+  },
+  {
+    "text": "The only way to do great work is to love what you do.",
+    "author": "Steve Jobs",
+    "category": "craft"
+  },
+  {
+    "text": "Have nothing in your houses that you do not know to be useful or believe to be beautiful.",
+    "author": "William Morris",
+    "category": "design"
+  },
+  {
+    "text": "Perfection is achieved not when there is nothing more to add, but when there is nothing left to take away.",
+    "author": "Antoine de Saint-Exupéry",
+    "category": "philosophy"
+  },
+  {
+    "text": "The most valuable thing you can make is a mistake — you can't learn anything from being perfect.",
+    "author": "Adam Osborne",
+    "category": "craft"
+  },
+  {
+    "text": "Simplicity is not the goal. It is the by-product of a good idea and modest expectations.",
+    "author": "Paul Rand",
+    "category": "design"
+  },
+  {
+    "text": "Empty your mind, be formless, shapeless — like water.",
+    "author": "Bruce Lee",
+    "category": "philosophy"
+  },
+  {
+    "text": "The creation of a thousand forests is in one acorn.",
+    "author": "Ralph Waldo Emerson",
+    "category": "contemplation"
+  },
+  {
+    "text": "Beauty is the promise of happiness.",
+    "author": "Stendhal",
+    "category": "philosophy"
+  },
+  {
+    "text": "The art of living is more like wrestling than dancing.",
+    "author": "Marcus Aurelius",
+    "category": "philosophy"
+  },
+  {
+    "text": "To see a world in a grain of sand, and heaven in a wild flower.",
+    "author": "William Blake",
+    "category": "contemplation"
+  },
+  {
+    "text": "Everything should be made as simple as possible, but not simpler.",
+    "author": "Albert Einstein",
+    "category": "philosophy"
+  },
+  {
+    "text": "The material is only an occasion for composition.",
+    "author": "Henri Matisse",
+    "category": "craft"
+  },
+  {
+    "text": "Form follows function — that has been misunderstood. Form and function should be one.",
+    "author": "Frank Lloyd Wright",
+    "category": "design"
+  },
+  {
+    "text": "Patience is bitter, but its fruit is sweet.",
+    "author": "Jean-Jacques Rousseau",
+    "category": "contemplation"
+  },
+  {
+    "text": "The journey of a thousand miles begins with a single step.",
+    "author": "Lao Tzu",
+    "category": "philosophy"
+  },
+  {
+    "text": "What you do not want done to yourself, do not do to others.",
+    "author": "Confucius",
+    "category": "philosophy"
+  },
+  {
+    "text": "The obstacle is the way.",
+    "author": "Marcus Aurelius",
+    "category": "philosophy"
+  },
+  {
+    "text": "Nature does not hurry, yet everything is accomplished.",
+    "author": "Lao Tzu",
+    "category": "contemplation"
+  }
+]
