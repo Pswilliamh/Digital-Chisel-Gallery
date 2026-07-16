@@ -222,6 +222,44 @@ export function JAYEmbassy() {
             <ExternalLink className="w-4 h-4" />
           </Link>
         </div>
+
+        {/* Direct Contact for Print Orders */}
+        <section className="mt-20 pt-12 border-t border-muted/20">
+          <div className="text-center space-y-6">
+            <h3 className="font-serif text-2xl md:text-3xl text-foreground">Direct Print Orders</h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Prefer to order directly? Contact us for custom print orders, bulk purchases, or special requests.
+            </p>
+            
+            <div className="max-w-xl mx-auto bg-card/30 backdrop-blur-sm rounded-lg p-8 border border-muted/20 space-y-4">
+              <div className="space-y-2">
+                <p className="text-sm text-muted-foreground uppercase tracking-wider">Email</p>
+                <a 
+                  href="mailto:contact@digitalchiselgallery.com" 
+                  className="text-foreground hover:text-primary transition-colors font-sans text-lg block"
+                >
+                  contact@digitalchiselgallery.com
+                </a>
+              </div>
+              
+              <div className="space-y-2">
+                <p className="text-sm text-muted-foreground uppercase tracking-wider">Phone</p>
+                <a 
+                  href="tel:+1234567890" 
+                  className="text-foreground hover:text-primary transition-colors font-sans text-lg block"
+                >
+                  +1 (234) 567-890
+                </a>
+              </div>
+
+              <div className="pt-4 border-t border-muted/20">
+                <p className="text-xs text-muted-foreground">
+                  Available Monday - Friday, 9:00 AM - 5:00 PM EST
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );
