@@ -63,7 +63,7 @@ const horizontalImages: GalleryImage[] = [
   { id: "h48", src: "/images/gallery/horizontal/f9702b1f-8ba3-4062-960c-d71529891842.png", alt: "Indonesian wood-relief print", orientation: "horizontal" },
 ];
 
-// All 23 vertical images - no duplicates
+// All 28 vertical images - no duplicates
 const verticalImages: GalleryImage[] = [
   { id: "v1", src: "/images/gallery/vertical/DCG-Bicycle_Becek.png", alt: "Indonesian wood-relief print", orientation: "vertical" },
   { id: "v2", src: "/images/gallery/vertical/DCG-Bicycle_Vender.png", alt: "Indonesian wood-relief print", orientation: "vertical" },
@@ -88,6 +88,11 @@ const verticalImages: GalleryImage[] = [
   { id: "v21", src: "/images/gallery/vertical/Gemini_Generated_Image_8lgtl8lgtl8lgtl8_1_.png", alt: "Indonesian wood-relief print", orientation: "vertical" },
   { id: "v22", src: "/images/gallery/vertical/image.png", alt: "Indonesian wood-relief print", orientation: "vertical" },
   { id: "v23", src: "/images/gallery/vertical/upscale-DCG-Christ.png", alt: "Indonesian wood-relief print", orientation: "vertical" },
+  { id: "v24", src: "/images/gallery/vertical/1784172096500.png", alt: "Indonesian wood-relief print", orientation: "vertical" },
+  { id: "v25", src: "/images/gallery/vertical/1784172185905.png", alt: "Indonesian wood-relief print", orientation: "vertical" },
+  { id: "v26", src: "/images/gallery/vertical/1784172285742.png", alt: "Indonesian wood-relief print", orientation: "vertical" },
+  { id: "v27", src: "/images/gallery/vertical/1784172333661.png", alt: "Indonesian wood-relief print", orientation: "vertical" },
+  { id: "v28", src: "/images/gallery/vertical/1784172352126.png", alt: "Indonesian wood-relief print", orientation: "vertical" },
 ];
 
 export function DigitalChiselGallery({ quotes }: DigitalChiselGalleryProps) {
