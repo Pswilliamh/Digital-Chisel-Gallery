@@ -63,7 +63,7 @@ const horizontalImages: GalleryImage[] = [
   { id: "h48", src: "/images/gallery/horizontal/f9702b1f-8ba3-4062-960c-d71529891842.png", alt: "Indonesian wood-relief print", orientation: "horizontal" },
 ];
 
-// All 32 vertical images - no duplicates
+// All 34 vertical images - no duplicates
 const verticalImages: GalleryImage[] = [
   { id: "v1", src: "/images/gallery/vertical/DCG-Bicycle_Becek.png", alt: "Indonesian wood-relief print", orientation: "vertical" },
   { id: "v2", src: "/images/gallery/vertical/DCG-Bicycle_Vender.png", alt: "Indonesian wood-relief print", orientation: "vertical" },
@@ -97,16 +97,20 @@ const verticalImages: GalleryImage[] = [
   { id: "v30", src: "/images/gallery/vertical/1784172359495.png", alt: "Indonesian wood-relief print", orientation: "vertical" },
   { id: "v31", src: "/images/gallery/vertical/1784172366893.png", alt: "Indonesian wood-relief print", orientation: "vertical" },
   { id: "v32", src: "/images/gallery/vertical/1784172410112.png", alt: "Indonesian wood-relief print", orientation: "vertical" },
+  { id: "v33", src: "/images/gallery/vertical/1784172172254.png", alt: "Indonesian wood-relief print", orientation: "vertical" },
+  { id: "v34", src: "/images/gallery/vertical/1784172215616.png", alt: "Indonesian wood-relief print", orientation: "vertical" },
 ];
 
 export function DigitalChiselGallery({ quotes }: DigitalChiselGalleryProps) {
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
   const [selectedQuote] = useState<WisdomQuote>(quotes[Math.floor(Math.random() * quotes.length)]);
 
-  // Live wallpaper videos - directly loaded
+  // Live wallpaper videos - all 4 animated videos
   const liveWallpaperImages: GalleryImage[] = [
     { id: "lw1", src: "/images/gallery/live-wallpaper/secritariate.mp4", alt: "Animated Secretariat horse relief", orientation: "horizontal" },
     { id: "lw2", src: "/images/gallery/live-wallpaper/sewing-machine.mp4", alt: "Animated sewing machine relief", orientation: "horizontal" },
+    { id: "lw3", src: "/images/gallery/live-wallpaper/gemini_generated_video_709adecb.mp4", alt: "Animated Digital Chisel relief", orientation: "horizontal" },
+    { id: "lw4", src: "/images/gallery/live-wallpaper/gemini_generated_video_45c7beea.mp4", alt: "Animated Digital Chisel relief", orientation: "horizontal" },
   ];
 
   const handleDownload = () => {

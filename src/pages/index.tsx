@@ -1,21 +1,24 @@
 import { useState, useEffect } from "react";
 import { SEO } from "@/components/SEO";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Button } from "@/components/ui/button";
 import { DailyAnchor } from "@/components/DailyAnchor";
 import { DigitalChiselGallery } from "@/components/DigitalChiselGallery";
 import { JAYEmbassy } from "@/components/JAYEmbassy";
 import { useAudioPlayer } from "@/hooks/useAudioPlayer";
+import { Volume2, VolumeX } from "lucide-react";
 import type { WisdomQuote } from "@/lib/gallery";
 
 export default function Home() {
   const [quotes, setQuotes] = useState<WisdomQuote[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
 
   // Global piano loop - auto-plays on app load, continues across all tabs
-  const { play } = useAudioPlayer({
+  const { play, pause, isPlaying } = useAudioPlayer({
     src: "/audio/Keyboard_Song_Yosh.mp3",
     loop: true,
-    autoPlay: false, // Set to false initially, trigger on user interaction
+    autoPlay: false,
   });
 
   useEffect(() => {
@@ -34,8 +37,9 @@ export default function Home() {
   // Start audio on first user interaction (required by browsers)
   useEffect(() => {
     const startAudio = () => {
-      play();
-      // Remove listener after first interaction
+      if (!isMuted) {
+        play();
+      }
       document.removeEventListener("click", startAudio);
       document.removeEventListener("touchstart", startAudio);
     };
@@ -47,7 +51,17 @@ export default function Home() {
       document.removeEventListener("click", startAudio);
       document.removeEventListener("touchstart", startAudio);
     };
-  }, [play]);
+  }, [play, isMuted]);
+
+  const toggleMusic = () => {
+    if (isMuted) {
+      play();
+      setIsMuted(false);
+    } else {
+      pause();
+      setIsMuted(true);
+    }
+  };
 
   if (isLoading) {
     return (
@@ -68,6 +82,21 @@ export default function Home() {
         image="/og-image.png"
         keywords="Digital Chisel, Indonesian Art, Wood Relief, J.A.Y. Trade School, Meditation Wallpaper, Structural Truth, Asian Art, Contemplative Art, Cultural Heritage, Daily Wisdom, Ambient Art"
       />
+
+      {/* Music Toggle Button - Fixed Position */}
+      <Button
+        onClick={toggleMusic}
+        className="fixed bottom-8 right-8 z-50 bg-card/80 backdrop-blur-md hover:bg-card shadow-lg rounded-full w-14 h-14"
+        size="icon"
+        variant="ghost"
+        aria-label={isMuted ? "Unmute music" : "Mute music"}
+      >
+        {isMuted ? (
+          <VolumeX className="w-6 h-6 text-muted-foreground" />
+        ) : (
+          <Volume2 className="w-6 h-6 text-foreground" />
+        )}
+      </Button>
 
       <Tabs defaultValue="anchor" className="w-full">
         <TabsList className="fixed top-0 left-0 right-0 z-50 w-full rounded-none border-b bg-card/80 backdrop-blur-md h-14">
