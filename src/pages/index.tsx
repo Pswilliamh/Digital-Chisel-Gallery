@@ -15,7 +15,7 @@ export default function Home() {
   const [isMuted, setIsMuted] = useState(false);
 
   // Global piano loop - auto-plays on app load, continues across all tabs
-  const { play, pause, isPlaying } = useAudioPlayer({
+  const { play, stop, isPlaying } = useAudioPlayer({
     src: "/audio/Keyboard_Song_Yosh.mp3",
     loop: true,
     autoPlay: false,
@@ -58,7 +58,7 @@ export default function Home() {
       play();
       setIsMuted(false);
     } else {
-      pause();
+      stop();
       setIsMuted(true);
     }
   };
