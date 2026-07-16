@@ -93,37 +93,12 @@ const verticalImages: GalleryImage[] = [
 export function DigitalChiselGallery({ quotes }: DigitalChiselGalleryProps) {
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
   const [selectedQuote] = useState<WisdomQuote>(quotes[Math.floor(Math.random() * quotes.length)]);
-  const [liveWallpaperImages, setLiveWallpaperImages] = useState<GalleryImage[]>([]);
 
-  useEffect(() => {
-    // Dynamically detect live wallpaper images
-    const detectLiveWallpapers = async () => {
-      try {
-        const response = await fetch('/images/gallery/live-wallpaper/');
-        const text = await response.text();
-        
-        // Simple detection: look for .png, .jpg, .gif in directory listing
-        const imageRegex = /([\w-]+\.(png|jpg|jpeg|gif|mp4))/gi;
-        const matches = text.match(imageRegex);
-        
-        if (matches) {
-          const images = matches
-            .filter(match => !match.includes('.gitkeep'))
-            .map((filename, index) => ({
-              id: `lw${index + 1}`,
-              src: `/images/gallery/live-wallpaper/${filename}`,
-              alt: "Animated Digital Chisel wood-relief print",
-              orientation: "horizontal" as const
-            }));
-          setLiveWallpaperImages(images);
-        }
-      } catch (error) {
-        console.log('Live wallpaper detection: folder empty or inaccessible');
-      }
-    };
-
-    detectLiveWallpapers();
-  }, []);
+  // Live wallpaper videos - directly loaded
+  const liveWallpaperImages: GalleryImage[] = [
+    { id: "lw1", src: "/images/gallery/live-wallpaper/secritariate.mp4", alt: "Animated Secretariat horse relief", orientation: "horizontal" },
+    { id: "lw2", src: "/images/gallery/live-wallpaper/sewing-machine.mp4", alt: "Animated sewing machine relief", orientation: "horizontal" },
+  ];
 
   const handleDownload = () => {
     if (selectedImage) {

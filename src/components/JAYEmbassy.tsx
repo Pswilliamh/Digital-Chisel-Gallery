@@ -37,25 +37,30 @@ export function JAYEmbassy() {
     <div className="min-h-screen bg-background py-16">
       <div className="editorial-container">
         <div className="text-center mb-20">
-          <Link
-            href="https://drive.google.com/file/d/1bFU3jgD2SyzLkq7TujpgHTKWfxbOPsRI/view?usp=drive_link"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block group"
-          >
-            <Image
-              src="/JAY_LOGO_NEW.JPG"
-              alt="J.A.Y. Trade School — Click to watch our mission video"
-              width={300}
-              height={300}
-              className="mx-auto mb-8 rounded-lg transition-transform group-hover:scale-105"
-            />
-            <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors flex items-center justify-center gap-2">
-              Click logo to watch our 1-minute mission video
-              <ExternalLink className="w-4 h-4" />
-            </p>
-          </Link>
+          <Image
+            src="/JAY_LOGO_NEW.JPG"
+            alt="J.A.Y. Trade School"
+            width={300}
+            height={300}
+            className="mx-auto mb-8 rounded-lg"
+          />
         </div>
+
+        {/* Junior Architect Project Video */}
+        <section className="mb-20">
+          <div className="aspect-video w-full max-w-4xl mx-auto rounded-lg overflow-hidden bg-card/50">
+            <iframe
+              src="https://drive.google.com/file/d/1bFU3jgD2SyzLkq7TujpgHTKWfxbOPsRI/preview"
+              width="100%"
+              height="100%"
+              allow="autoplay"
+              className="w-full h-full"
+            />
+          </div>
+          <p className="text-center text-muted-foreground mt-4 font-sans">
+            The Junior Architect Project — A Vision of Structural Truth
+          </p>
+        </section>
 
         <section className="mb-32">
           <h1 className="editorial-heading">Seven Years of Structural Truth</h1>
